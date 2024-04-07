@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <link type= "text/css" rel="stylesheet" href="{% static "css/index.css" %}">
+</head> 
+<body>
+    <h1>Bienvenido a mi sitio dental</h1>
+    <h3>Te muestro como cuidar tus piezas dentales:</h3>
+    {% include "lista.html" %}
+    {% block content %}
+    {% endblock %}
+    <footer>
+        &copy; 2024 Mi Sitio Dental
+    </footer>
+</body>
+</html>
+
