@@ -1,0 +1,30 @@
+{% extends "index.html" %}
+{% block title %}Listado de Proveedores{% endblock %}
+{% block content %}
+<div class="container">
+    <h1>Listado de Proveedores</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>DNI</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for proveedor in proveedores %}
+            <tr>
+                <td>{{ proveedor.nombre }}</td>
+                <td>{{ proveedor.apellido }}</td>
+                <td>{{ proveedor.dni }}</td>
+                <td>
+                    <a href="{% url 'editar_proveedor' proveedor.pk %}" class="btn btn-light btn-sm">Editar</a>
+                    <a href="{% url 'borrar_proveedor' proveedor.pk %}" class="btn btn-dark btn-sm">Borrar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a class="btn btn-outline-dark" href="{% url 'index'  %}">Volver</a>
+</div>
+{% endblock %}
